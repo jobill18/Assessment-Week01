@@ -71,7 +71,7 @@ function stickyCase(string) {
       stickyLetters.push(letters[i]);
     }
   }
-  let stringNew = letters.join('')
+  let stringNew = stickyLetters.join('')
   return stringNew
 }
 
