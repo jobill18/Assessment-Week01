@@ -89,18 +89,12 @@ function findWordsStartingWith(words, letter) {
 //   smallestNItems([1, 30, 4, 21, 100000], 3);
 //   => [21, 4, 1]
 function smallestNItems(items, n) {
-  // let smallValues = [];
-  // let small = items[0];
-  // for(let i=0; smallValues.length() < n; i=0){
-  //   for(let j = i +1; j < items.length(); j ++){
-  //     if(small > item [j]){
-  //       small = item[j];
-  //     }
-  //   }
-  //   smallValues.unshift(items[items.indexOf(small)])
-  //   items.splice(items.indexOf(small), 1)
-  // }
-  // return smallValues
+  items.sort((a, b) => a - b);
+  const smallValues = [];
+  for (let i = 0; i < n; i ++){
+    smallValues.unshift(items[i])
+  }
+  return smallValues
 }
 
 // Search for a value in the array and return its index. If the value appears
@@ -112,11 +106,7 @@ function smallestNItems(items, n) {
 function findIndex(items, value) {
   for (let i = 0; i < items.length; i ++){
     if (items[i] === value){
-      for (let j = i+1; j < items.length; j ++){
-          if (items[i] === items[j]){
-              return i
-          }
-      }
+      return i
     }
   }
 }
