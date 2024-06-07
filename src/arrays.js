@@ -111,9 +111,11 @@ function smallestNItems(items, n) {
 //   => 2
 function findIndex(items, value) {
   for (let i = 0; i < items.length; i ++){
-    for (let j = i+1; j < items.length; j ++){
-      if (items[i] == items[j]){
-        return i
+    if (items[i] === value){
+      for (let j = i+1; j < items.length; j ++){
+          if (items[i] === items[j]){
+              return i
+          }
       }
     }
   }
