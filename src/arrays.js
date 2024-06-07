@@ -126,7 +126,13 @@ function findIndex(items, value) {
 // Ex.:
 //   range(1, 5);
 //   => [1, 2, 3, 4, 5]
-function range(start, stop) {}
+function range(start, stop) {
+  let numbers = []
+  for (let i = start; i <= stop; i++){
+    numbers.push(i)
+  }
+  return numbers
+}
 
 export {
   bWords,
