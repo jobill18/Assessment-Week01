@@ -109,7 +109,15 @@ function smallestNItems(items, n) {
 // Ex.:
 //   findIndex(['a', 'b', 'c', 'a', 'b', 'c'], 'c');
 //   => 2
-function findIndex(items, value) {}
+function findIndex(items, value) {
+  for (let i = 0; i < items.length; i ++){
+    for (let j = i+1; j < items.length; j ++){
+      if (items[i] == items[j]){
+        return i
+      }
+    }
+  }
+}
 
 // Given a start number and stop number, return a new array containing all the numbers
 // between the start and stop number.
