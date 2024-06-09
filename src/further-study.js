@@ -6,14 +6,24 @@
 //   => ['a']
 //   commonStrings(['zoo', 'space', 'zoo'], ['zoo', 'space', 'boat']);
 //   => ['zoo', 'space']
-function commonStrings(array1, array2) {}
+function commonStrings(array1, array2) {
+
+}
 
 // Given three numbers, return a list of numbers from 1 to 100 that are
 // divisible by at least one of a, b or c.
 // Ex.:
 //   divisibleByEither(50, 30, 29);
 //   => [29, 30, 50, 58, 60, 87, 90, 100]
-function divisibleByEither(a, b, c) {}
+function divisibleByEither(a, b, c) {
+    let products = [];
+    for (let i=1; i <= 100; i++){
+        if(i % a = 0 || i % b = 0 || i % c = 0){
+            products.push(i);
+        }
+    }
+    return products
+}
 
 // Compress a string using the rules below and return the result. To compress a
 // string, replace consecutive duplicate characters with a number and the
