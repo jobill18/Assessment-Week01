@@ -18,7 +18,7 @@ function commonStrings(array1, array2) {
 function divisibleByEither(a, b, c) {
     let products = [];
     for (let i=1; i <= 100; i++){
-        if(i % a = 0 || i % b = 0 || i % c = 0){
+        if(i % a === 0 || i % b === 0 || i % c === 0){
             products.push(i);
         }
     }
