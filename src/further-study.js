@@ -7,7 +7,23 @@
 //   commonStrings(['zoo', 'space', 'zoo'], ['zoo', 'space', 'boat']);
 //   => ['zoo', 'space']
 function commonStrings(array1, array2) {
-
+    let strings = [];
+    for (let i = 0; i < array1.length; i ++){
+        for (let j = 0; j < array2.length; j++){
+            if (array1[i] === array2[j]){
+                strings.push(array1[i]);
+                break
+            }
+        }
+    }
+    for (let k = 0; k < strings.length; k++){
+        for (let l = k + 1; l < strings.length; l++){
+            if (strings[k] === strings[l]){
+                strings.splice(l, 1)
+            }
+        }
+    }
+    return strings
 }
 
 // Given three numbers, return a list of numbers from 1 to 100 that are
