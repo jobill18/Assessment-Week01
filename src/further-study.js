@@ -40,16 +40,21 @@ function divisibleByEither(a, b, c) {
 function compressString(string) {
     let compressedLetters = []
     for (let i=0; i < string.length; i++){
-        for (let j=i+=; j < string.length; j++){
-            if (string[i] !== string[j] && j-i !== 1){
-                compressedLetters.push(j-i)
+        for (let j=i+1; j < string.length; j++){
+            if (string[i] !== string[j] && j-i !== 1 && string[i] !== string[i-1]){
+                compressedLetters.push(j-i);
+                break
+            } if (j+1 === string.length && string[i] === string [j] && string[i] !== string [i-1]){
+                compressedLetters.push((j-i)+1);
             }
-        }
-        if (string[i] !== string[i-1]){
-        compressedLetters.push(string[i])
+        } if (string[i] !== string[i-1]){
+            compressedLetters.push(string[i]);
         }
     }
-    let compressedString = compressedLetters.toString();
+    if (compressedLetters.length === 1 && compressedLetters[0] === string[0] && string.length !== 1){
+        compressedLetters.unshift(string.length)
+    }
+    let compressedString = compressedLetters.join('');
     return compressedString
 }
 
